@@ -1,5 +1,6 @@
 // global scope variables //
 const form = document.getElementById('myForm');
+const date = new Date();
 const tasks = [];
 // setting up event listeners for submit //
 form.addEventListener('submit', (e) => {
@@ -15,7 +16,9 @@ form.addEventListener('submit', (e) => {
 function addTask(name , type) {
     const task = {
         taskName: name,
-        taskType: type       
+        taskType: type,
+        // taskDate: date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear() //
+        taskDate: date.toLocaleTimeString()     
     }
     tasks.push(task);
     console.table(tasks);
@@ -33,7 +36,8 @@ function createTask() {
     removeBtn.classList.add('btn','btn-danger' ,'mx-2' ,'my-3');
     task.classList.add('list-group-item');
     task.innerHTML = `<h1>${tasks[tasks.length - 1].taskName}</h1>
-    <h4>${tasks[tasks.length - 1].taskType}</h4>`;
+    <h4>${tasks[tasks.length - 1].taskType}</h4>
+    <p>on<em> ${tasks[tasks.length - 1].taskDate}</em></p>`;
     task.append(completeBtn);
     task.append(removeBtn);
     taskList.append(task);
