@@ -28,9 +28,9 @@ function createTask() {
     const completeBtn = document.createElement('button');
     const removeBtn = document.createElement('button');
     completeBtn.innerText = 'Complete Task';
-    completeBtn.classList.add('btn','btn-success' ,'mx-2');
+    completeBtn.classList.add('btn','btn-success' ,'mx-2' ,'my-3');
     removeBtn.innerText = 'Remove Task';
-    removeBtn.classList.add('btn','btn-danger' ,'mx-2');
+    removeBtn.classList.add('btn','btn-danger' ,'mx-2' ,'my-3');
     task.classList.add('list-group-item');
     task.innerHTML = `<h1>${tasks[tasks.length - 1].taskName}</h1>
     <h4>${tasks[tasks.length - 1].taskType}</h4>`;
